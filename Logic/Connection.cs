@@ -8,10 +8,10 @@ namespace Connection
 {
     public class Connection
     {
-        public static bool Login(string username, string password)
+        public static bool Login(string username, string password, List<string> loginData)
         {
             bool result = false;
-            if (username == "admin" && password == "1234")
+            if (username == loginData[0] && password == loginData[1])
             {
                 result = true;
             }

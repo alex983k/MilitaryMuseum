@@ -11,16 +11,12 @@ namespace testing
     {
         static void Main(string[] args)
         {
-            string text = "0";
-            SqlConnection conn = new SqlConnection
-                (@"Data Source = ealdb1.eal.local;
-                 Database = EJL63_DB;
-                 User ID = ejl63_usr;
-                 Password = Baz1nga63"
-                );
+
+            SqlConnection conn = Database.Connection.Connect();
             conn.Open();
-            DatabaseFunction.Reader.Reading(text, conn);
-            conn.Close();
+            Connection.Connection.Login("admin", "1234", Database.Reader.ReadLogin(conn));
+            int i = 2;
+            Console.WriteLine(i);
             Console.ReadKey();
         }
     }

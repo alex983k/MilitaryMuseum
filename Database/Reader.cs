@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
 using ClassLibrary;
+using System.Data.SqlClient;
 
-namespace DatabaseFunction
+namespace Database
 {
     public class Reader
     {
@@ -20,7 +20,7 @@ namespace DatabaseFunction
                 Item i = new Item(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6));
                 result.Add(i);
             }
-            reader.Close();          
+            reader.Close();
             return result;
         }
         public static List<Provider> ReadProviders(SqlConnection conn)
@@ -32,6 +32,19 @@ namespace DatabaseFunction
             {
                 Provider i = new Provider(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));
                 result.Add(i);
+            }
+            reader.Close();
+            return result;
+        }
+        public static List<string> ReadLogin(SqlConnection conn)
+        {
+            List<string> result = new List<string>();
+            SqlCommand cmd = new SqlCommand("SELECT Username, Password   FROM [EJL63_DB].[db_owner].[Login]", conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                result.Add(reader.GetString(0));
+                result.Add(reader.GetString(1));
             }
             reader.Close();
             return result;
