@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using ClassLibrary;
+using Database;
+using Login;
 
 namespace testing
 {
@@ -12,11 +15,15 @@ namespace testing
         static void Main(string[] args)
         {
 
-            SqlConnection conn = Database.Connection.Connect();
-            conn.Open();
-            Connection.Connection.Login("admin", "1234", Database.Reader.ReadLogin(conn));
+            LoginValidation validator = new LoginValidation();
+            SqlConnection con = Database.Connection.Connect();
+            con.Open();
+            bool c= validator.Login("admin", "1234");
             int i = 2;
-            Console.WriteLine(i);
+            Provider p = new Provider(0, "Alex", "Fake emauil", "355635");
+            Edit.InsertProvider(p, con);
+                Console.WriteLine(i);
+            Console.WriteLine(c);
             Console.ReadKey();
         }
     }

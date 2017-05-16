@@ -56,7 +56,6 @@ namespace Logic
             // removed in a later procedure.
             #endregion
             Excel._Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet;
-
             workSheet.Cells[1, "A"] = "ID";
             workSheet.Cells[1, "B"] = "Name";
             workSheet.Cells[1, "C"] = "Area";
@@ -64,7 +63,6 @@ namespace Logic
             workSheet.Cells[1, "E"] = "Description";
             workSheet.Cells[1, "F"] = "IDLocation";
             workSheet.Cells[1, "G"] = "ProviderID";
-
             var row = 1;
             foreach (var item in v)
             {
@@ -76,8 +74,6 @@ namespace Logic
                 workSheet.Cells[row, "E"] = item.Description;
                 workSheet.Cells[row, "F"] = item.IDLocation;
                 workSheet.Cells[row, "G"] = item.ProviderID;
-
-
             }
             workSheet.Columns[1].AutoFit();
             workSheet.Columns[2].AutoFit();
@@ -107,7 +103,6 @@ namespace Logic
             // removed in a later procedure.
             #endregion
             Excel._Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet;
-
             workSheet.Cells[1, "A"] = "ID";
             workSheet.Cells[1, "B"] = "Name";
             workSheet.Cells[1, "C"] = "Email";

@@ -56,6 +56,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Database\Database.csproj">
+      <Project>{E7B34EE9-1755-416B-B604-60013FD153BB}</Project>
+      <Name>Database</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logic\Logic.csproj">
       <Project>{BC2F06C2-19AE-4873-9E8C-2FA963E79AFC}</Project>
       <Name>Logic</Name>

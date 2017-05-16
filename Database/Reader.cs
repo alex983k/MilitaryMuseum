@@ -13,11 +13,11 @@ namespace Database
         public static List<Item> ReadItems(SqlConnection conn)
         {
             List<Item> result = new List<Item>();
-            SqlCommand cmd = new SqlCommand("SELECT ID, Name, Area, Category, Description, IDLocation, ProviderID   FROM [EJL63_DB].[db_owner].[Items]", conn);
+            SqlCommand cmd = new SqlCommand("SELECT ID, Name, Area, Category, Description, IDLocation, ProviderID   FROM [EJL63_DB].[db_owner].[Item]", conn);
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                Item i = new Item(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6));
+                Item i = new Item(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6));
                 result.Add(i);
             }
             reader.Close();
@@ -49,5 +49,13 @@ namespace Database
             reader.Close();
             return result;
         }
+        //public static Item ReadOneItem(SqlConnection conn)
+        //{
+        //    SqlCommand cmd = new SqlCommand("SELECT ID, Name, Area, Category, Description, IDLocation, ProviderID   FROM [EJL63_DB].[db_owner].[Item]", conn);
+        //    SqlDataReader reader = cmd.ExecuteReader();
+        //    reader.Read();
+        //    Item i = new Item(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetInt32(6));
+        //    return i;
+        //}
     }
 }

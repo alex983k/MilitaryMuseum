@@ -46,7 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connection.cs" />
+    <Compile Include="DomainController.cs" />
+    <Compile Include="LoginValidation.cs" />
     <Compile Include="DataExport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

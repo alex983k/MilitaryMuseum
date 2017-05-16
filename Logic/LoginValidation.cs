@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Connection
+namespace Login
 {
-    public class Connection
+    public class LoginValidation
     {
-        public static bool Login(string username, string password, List<string> loginData)
+        public bool Login(string username, string password)
         {
             bool result = false;
-            if (username == loginData[0] && password == loginData[1])
+            if (username == "admin"&& password == "pass")
             {
                 result = true;
             }

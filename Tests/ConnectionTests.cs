@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Database;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Connection;
 using System;
 using System.Collections.Generic;
@@ -23,8 +24,8 @@ namespace Connection.Tests
             string username1 = "admin1";
             string password1 = "123";
             bool result1 = false;
-            result = Connection.Login(username, password, data);
-            result1 = Connection.Login(username1, password1, data);
+            result = LoginValidation.Login(username, password, data);
+            result1 = LoginValidation.Login(username1, password1, data);
             Assert.AreEqual(true, result);
             Assert.AreEqual(false, result1);
         }

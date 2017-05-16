@@ -10,12 +10,12 @@ namespace ClassLibrary
     {
         public int ID { get; private set; }
         public string Name { get; private set; }
-        public string Area { get; private set; }
+        public int Area { get; private set; }
         public string Category { get; private set; }
         public string Description { get; private set; }
         public string IDLocation { get; private set; }
         public int ProviderID { get; private set; }
-        public Item(int id, string name, string area, string category, string description, string idlocation, int providerID)
+        public Item(int id, string name, int area, string category, string description, string idlocation, int providerID)
         {
             ID = id;
             Name = name;
